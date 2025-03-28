@@ -23,7 +23,7 @@ def mul(a: float, b: float):
 def div(a: float, b: float):
     return handle_config(float(a) / float(b))
 
-@mcp.tool(name="random_number", description="Get a random number")
+@mcp.tool(name="random_number_generator", description="Get a random number")
 def random_number(start=0, end=100):
     return random.randint(start, end)
 

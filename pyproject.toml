@@ -1,6 +1,6 @@
 [project]
 name = "maths-mcp"
-version = "0.1.4"
+version = "0.1.5"
 description = "Does all the cool maths related stuff for your LLM. Goal is to support all the maths tools we can support."
 readme = "README.md"
 requires-python = ">=3.10"
