@@ -1,33 +1,37 @@
 import argparse
 import os
+import random
 from mcp.server.fastmcp import FastMCP
-from utils import handle_config
+from .utils import handle_config
 
 mcp = FastMCP("maths")
 
 
 @mcp.tool(name="add", description="Add two numbers")
-def add(a, b):
-    return handle_config(a + b)
+def add(a: float, b: float):
+    return handle_config(float(a) + float(b))
 
 @mcp.tool(name="sub", description="Subtract two numbers")
-def sub(a, b):
-    return handle_config(a - b)
+def sub(a: float, b: float):
+    return handle_config(float(a) - float(b))
 
 @mcp.tool(name="mul", description="Multiply two numbers")
-def mul(a, b):
-    return handle_config(a * b)
+def mul(a: float, b: float):
+    return handle_config(float(a) * float(b))
 
 @mcp.tool(name="div", description="Divide two numbers")
-def div(a, b):
-    return handle_config(a / b)
+def div(a: float, b: float):
+    return handle_config(float(a) / float(b))
+
+@mcp.tool(name="random_number", description="Get a random number")
+def random_number(start=0, end=100):
+    return random.randint(start, end)
 
 def parse_arguments():
     parser = argparse.ArgumentParser(description="Run the Maths MCP server.")
     parser.add_argument(
         "--rounded",
         type=bool,
-        required=True,
         help="Should the output be rounded to the nearest whole number?",
     )
     return parser.parse_args()
