@@ -80,8 +80,8 @@ def install_for_claude():
 
     config_data.setdefault("mcpServers", {})
     config_data["mcpServers"]["maths"] = {
-        "command": "maths-mcp",
-        "args": ["--rounded"] if rounded else []
+        "command": "pipx",
+        "args": ["run", "maths-mcp" "--rounded=ROUNDED"] if rounded else ["run", "maths-mcp"]
     }
 
     with config_path.open("w", encoding="utf-8") as f:
