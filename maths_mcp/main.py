@@ -58,6 +58,8 @@ def install_for_claude():
     if not is_command_available("maths-mcp"):
         print("`maths-mcp` not found globally. Installing with pip...")
         subprocess.check_call([sys.executable, "-m", "pip", "install", "maths-mcp"])
+    else:
+        print("`maths-mcp` found globally.")
 
     rounded = get_user_rounded_choice()
 
